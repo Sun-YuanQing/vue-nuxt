@@ -27,7 +27,11 @@ export default {
      var data = { user: 'admin', passwor: '123456' };
    return  user1.login(data).then(res => {
               var response=JSON.stringify(res)
+			  if(response=="[]"){
+				  response="asyncData"
+			  }
          return {response}
+		 
        })
        .catch(error => {});
    }
